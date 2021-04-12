@@ -1,39 +1,58 @@
+// Import dependences
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Card from "react-bootstrap/Card";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-
+// Create functional component and export it
 export default function Vehicles() {
+  // Declaring and setting state
   const [vehicles, setVehicles] = useState([]);
+  // Invoking useEffect to get data from api
   useEffect(() => {
-    axios.get("https://ghibliapi.herokuapp.com/vehicles")
-      .then(response => {
+    // Using axios to getch from api
+    axios
+      .get("https://ghibliapi.herokuapp.com/vehicles")
+      .then((response) => {
         console.log(response);
-        let {data} = response
+        let { data } = response;
         setVehicles(
-          data.map(vehicle => (
-            {
-              name: vehicle.name,
-              class: vehicle.vehicle_class,
-              length: vehicle.length,
-              pilot: vehicle.pilot,
-              description: vehicle.description
-            }))
-        )
-         })
-         .catch(err => console.error(err.message))
-  }, [])
+          data.map((vehicle) => ({
+            name: vehicle.name,
+            class: vehicle.vehicle_class,
+            length: vehicle.length,
+            pilot: vehicle.pilot,
+            description: vehicle.description,
+          }))
+        );
+      })
+      // catching errors and showing it
+      .catch((err) => console.error(err.message));
+  }, []);
+  // Rendering vehicle component
   return (
-    <div>
+    <>
       <h1>Vehicles</h1>
-      {vehicles.map(vehicle => (
-        <div>
-          <h3>{ vehicle.name}</h3>
-          <p>Class: { vehicle.class}</p>
-          <p>Length: { vehicle.length}</p>
-          <p>Pilot: { vehicle.pilot}</p>
-          <p>Description: { vehicle.description}</p>
-        </div>
-      ))}
-    </div>
-  )
+      {/* Using Container/Row/Col/Cards to style the page */}
+      <Container fluid>
+        <Row>
+          {/* Mapping through the data and get each property in setState */}
+          {vehicles.map((vehicle) => (
+            <Col md="4" className="mb-3">
+              <Card>
+                <Card.Header as="h3" className="bg-warning text-center">{vehicle.name}</Card.Header>
+                <Card.Text>Class: {vehicle.class}</Card.Text>
+                <Card.Text>Length: {vehicle.length}</Card.Text>
+                <Card.Text>Pilot: {vehicle.pilot}</Card.Text>
+                <Card.Text>Description: {vehicle.description}</Card.Text>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </Container>
+    </>
+  );
 }
