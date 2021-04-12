@@ -49,7 +49,7 @@ export default function Films() {
               <Card key={film.id}>
                 {/* TODO fix cors issues in React */}
                 <img variant="top" src={film.url} alt="movie poster" />
-                <Card.Header as="h3" className="bg-info">
+                <Card.Header as="h3" className="bg-info text-center">
                   {film.title} - {film.release}
                 </Card.Header>
                 <Card.Body>
