@@ -1,44 +1,63 @@
+// Import dependences
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Card from "react-bootstrap/Card";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import "bootstrap/dist/css/bootstrap.min.css";
 
+// Create functional component and export it
 export default function Locations() {
+  // Declaring and setting state
   const [location, setLocation] = useState([]);
-  useEffect(() =>
-    axios.get("https://ghibliapi.herokuapp.com/locations")
-      .then(response => {
-        let { data } = response;
-        console.log(data);
-        setLocation(
-          data.map(place => ({
-            name: place.name,
-            climate: place.climate,
-            terrain: place.terrain,
-            surface_water: place.surface_water,
-            url: place.url
-          }))
-        )
-      })
-      .catch(err => console.error(err.message))
-   , []);
+  // Invoking useEffect to get data from api
+  useEffect(
+    () =>
+      // Using axios to getch from api
+      axios
+        .get("https://ghibliapi.herokuapp.com/locations")
+        .then((response) => {
+          let { data } = response;
+          console.log(data);
+          setLocation(
+            data.map((place) => ({
+              name: place.name,
+              climate: place.climate,
+              terrain: place.terrain,
+              surface_water: place.surface_water,
+              url: place.url,
+            }))
+          );
+        })
+        // catching errors and showing it
+        .catch((err) => console.error(err.message)),
+    []
+  );
+  // Rendering locations component
   return (
-    <div>
+    <>
       <h1>Locations</h1>
-      {location.map(place => (
-        <div className="row">
-        <div className="col-md-6">
-          <div className="card" key={place.id}>
-            {/* TODO fix cors issues in React */}
-            <img src={place.url} className="card-img-top" alt="movie image" />
-            <div className="card-body">
-              <h3 className="card-title"> Place: {place.name}</h3>
-              <h4>Climate: {place.climate}</h4>
-              <p>Terrain: { place.terrain}</p>
-              <p className="card-text">Surface Water: {place.surface_water}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-        ))}
-    </div>
-  )
+      {/* Using Container/Row/Col/Cards to style the page */}
+      <Container fluid>
+        <Row>
+          {/* Mapping through the data and get each property in setState */}
+          {location.map((place) => (
+            <Col md="4" className="mb-3">
+              <Card key={place.id}>
+                {/* TODO fix cors issues in React */}
+                <img variant="top" src={place.url} alt="movie" />
+                  <Card.Header as="h3" className="bg-warning text-center">{place.name}</Card.Header>
+                <Card.Body>
+                  <Card.Text>Climate: {place.climate}</Card.Text>
+                  <Card.Text>Terrain: {place.terrain}</Card.Text>
+                  <Card.Text>Surface Water: {place.surface_water}</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </Container>
+    </>
+  );
 }
