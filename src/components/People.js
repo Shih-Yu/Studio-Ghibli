@@ -38,7 +38,7 @@ export default function People() {
         .catch((err) => console.error(err.message)),
     []
   );
-  // Rendering locations component
+  // Rendering people component
   return (
     <>
       <h1>People of Studio Ghibli</h1>
