@@ -6,6 +6,7 @@ import People from "./components/People";
 import Locations from "./components/Locations";
 import Species from "./components/Species";
 import Vehicles from "./components/Vehicles";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
           <Route path="/films" component={ Films } />
           <Route path="/people" component={ People } />
           <Route path="/locations" component={ Locations } />
-           <Route path="/species" component={ Species } />
+          <Route path="/species" component={ Species } />
           <Route path="/vehicles" component={ Vehicles } /> 
       </Switch>
       </div>
