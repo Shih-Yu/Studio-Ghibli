@@ -17,8 +17,8 @@ export default function Vehicles() {
     axios
       .get("https://ghibliapi.herokuapp.com/vehicles")
       .then((response) => {
-        console.log(response);
         let { data } = response;
+        console.log(data)
         setVehicles(
           data.map((vehicle) => ({
             id: vehicle.id,
