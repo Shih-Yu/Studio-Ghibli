@@ -21,6 +21,7 @@ export default function Vehicles() {
         let { data } = response;
         setVehicles(
           data.map((vehicle) => ({
+            id: vehicle.id,
             name: vehicle.name,
             class: vehicle.vehicle_class,
             length: vehicle.length,
@@ -35,15 +36,15 @@ export default function Vehicles() {
   // Rendering vehicle component
   return (
     <>
-      <h1>Vehicles</h1>
+      <h1 className="m-5">Vehicles</h1>
       {/* Using Container/Row/Col/Cards to style the page */}
       <Container fluid>
         <Row>
           {/* Mapping through the data and get each property in setState */}
           {vehicles.map((vehicle) => (
             <Col md="4" className="mb-3">
-              <Card>
-                <Card.Header as="h3" className="bg-warning text-center">{vehicle.name}</Card.Header>
+              <Card key={vehicle.id}>
+                <Card.Header as="h3" className="bg-info text-center">{vehicle.name}</Card.Header>
                 <Card.Text>Class: {vehicle.class}</Card.Text>
                 <Card.Text>Length: {vehicle.length}</Card.Text>
                 <Card.Text>Pilot: {vehicle.pilot}</Card.Text>

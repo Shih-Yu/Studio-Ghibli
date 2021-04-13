@@ -38,7 +38,7 @@ export default function Species() {
   // Rendering species component
   return (
     <>
-      <h1>Species</h1>
+      <h1 className="m-5">Species</h1>
       <Container fluid>
         <Row>
           {/* Using Container/Row/Col/Cards to style the page */}
@@ -46,7 +46,7 @@ export default function Species() {
           {species.map((specie) => (
             <Col md="4" className="mb-3">
               <Card>
-                <Card.Header as="h3" className="bg-success text-center">
+                <Card.Header as="h3" className="bg-info text-center">
                   {specie.name}
                 </Card.Header>
                 <Card.Body>

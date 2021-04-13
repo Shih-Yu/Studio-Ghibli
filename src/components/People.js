@@ -41,7 +41,7 @@ export default function People() {
   // Rendering people component
   return (
     <>
-      <h1>People of Studio Ghibli</h1>
+      <h1 className="m-5">People of Studio Ghibli</h1>
       {/* Using Container/Row/Col/Cards to style the page */}
       <Container fluid>
         <Row>
@@ -50,7 +50,7 @@ export default function People() {
             <Col md="4" className="mb-3">
               <Card key={person.id}>
                 <img src={person.url} alt="character" />
-                <Card.Header as="h3" className="bg-primary text-center">
+                <Card.Header as="h3" className="bg-info text-center">
                   {person.name}
                 </Card.Header>
                 <Card.Body>

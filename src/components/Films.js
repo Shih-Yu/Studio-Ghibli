@@ -19,7 +19,7 @@ export default function Films() {
         .get("https://ghibliapi.herokuapp.com/films")
         .then((response) => {
           let { data } = response;
-          // console.log(data);
+          console.log(data);
           setFilms(
             data.map((film) => ({
               title: film.title,
@@ -39,7 +39,7 @@ export default function Films() {
   // Rendering film component
   return (
     <>
-      <h1>Welcome to the film page</h1>
+      <h1 className="m-5">Welcome to the film page</h1>
       {/* Using Container/Row/Col/Cards to style the page */}
       <Container fluid>
         <Row>

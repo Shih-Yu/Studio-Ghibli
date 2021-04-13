@@ -37,7 +37,7 @@ export default function Locations() {
   // Rendering locations component
   return (
     <>
-      <h1>Locations</h1>
+      <h1 className="m-5">Locations</h1>
       {/* Using Container/Row/Col/Cards to style the page */}
       <Container fluid>
         <Row>
@@ -47,7 +47,7 @@ export default function Locations() {
               <Card key={place.id}>
                 {/* TODO fix cors issues in React */}
                 <img variant="top" src={place.url} alt="movie" />
-                  <Card.Header as="h3" className="bg-warning text-center">{place.name}</Card.Header>
+                  <Card.Header as="h3" className="bg-info text-center">{place.name}</Card.Header>
                 <Card.Body>
                   <Card.Text>Climate: {place.climate}</Card.Text>
                   <Card.Text>Terrain: {place.terrain}</Card.Text>
