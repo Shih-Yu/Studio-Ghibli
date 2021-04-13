@@ -44,9 +44,11 @@ export default function Vehicles() {
             <Col md="4" className="mb-3">
               <Card key={vehicle.id}>
                 <Card.Header as="h3" className="bg-info text-center">{vehicle.name}</Card.Header>
+                <Card.Body className="bg-secondary">
                 <Card.Text>Class: {vehicle.class}</Card.Text>
                 <Card.Text>Length: {vehicle.length}</Card.Text>
-                <Card.Text>Description: {vehicle.description}</Card.Text>
+                  <Card.Text>Description: { vehicle.description }</Card.Text>
+                  </Card.Body>
               </Card>
             </Col>
           ))}

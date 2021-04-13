@@ -45,7 +45,7 @@ export default function Locations() {
             <Col md="4" className="mb-3">
               <Card key={place.id}>
                   <Card.Header as="h3" className="bg-info text-center">{place.name}</Card.Header>
-                <Card.Body>
+                <Card.Body className="bg-secondary">
                   <Card.Text>Climate: {place.climate}</Card.Text>
                   <Card.Text>Terrain: {place.terrain}</Card.Text>
                   <Card.Text>Surface Water: {place.surface_water}</Card.Text>

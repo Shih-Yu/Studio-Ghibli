@@ -49,7 +49,7 @@ export default function People() {
                 <Card.Header as="h3" className="bg-info text-center">
                   {person.name}
                 </Card.Header>
-                <Card.Body>
+                <Card.Body className="bg-secondary">
                   <Card.Text>Age: {person.age}</Card.Text>
                   <Card.Text>Gender: {person.gender}</Card.Text>
                   <Card.Text>Eye Color: {person.eyeColor}</Card.Text>

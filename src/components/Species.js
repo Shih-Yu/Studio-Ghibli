@@ -47,7 +47,7 @@ export default function Species() {
                 <Card.Header as="h3" className="bg-info text-center">
                   {specie.name}
                 </Card.Header>
-                <Card.Body>
+                <Card.Body className="bg-secondary">
                   <Card.Text>Classification: {specie.classification}</Card.Text>
                   <Card.Text>Hair colors: {specie.hairColor}</Card.Text>
                   <Card.Text>Eye colors: {specie.eyeColor}</Card.Text>

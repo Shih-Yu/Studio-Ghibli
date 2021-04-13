@@ -50,10 +50,10 @@ export default function Films() {
                 <Card.Header as="h3" className="bg-info text-center">
                   {film.title} - {film.release}
                 </Card.Header>
-                <Card.Body>
+                <Card.Body className="bg-secondary">
                   <Card.Text as="h3">{film.original_title}</Card.Text>
                   <Card.Text>{film.director}</Card.Text>
-                  <Card.Text className="card-text text-secondary">{film.description}</Card.Text>
+                  <Card.Text className="card-text text-dark">{film.description}</Card.Text>
                 </Card.Body>
               </Card>
             </Col>
