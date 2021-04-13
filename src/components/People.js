@@ -27,10 +27,7 @@ export default function People() {
               age: person.age,
               gender: person.gender,
               eyeColor: person.eye_color,
-              hairColor: person.hair_color,
-              species: person.species,
-              film: person.film,
-              url: person.url,
+              hairColor: person.hair_color
             }))
           );
         })
@@ -49,7 +46,6 @@ export default function People() {
           {people.map((person) => (
             <Col md="4" className="mb-3">
               <Card key={person.id}>
-                <img src={person.url} alt="character" />
                 <Card.Header as="h3" className="bg-info text-center">
                   {person.name}
                 </Card.Header>
@@ -58,13 +54,6 @@ export default function People() {
                   <Card.Text>Gender: {person.gender}</Card.Text>
                   <Card.Text>Eye Color: {person.eyeColor}</Card.Text>
                   <Card.Text>Hair Color: {person.hairColor}</Card.Text>
-                  {/* TODO Get image of species and url or link to it */}
-                  <Card.Text>
-                    Species: <Link>{person.species}</Link>
-                  </Card.Text>
-                  <Card.Text>
-                    Appeared In: <Link>{person.url}</Link>
-                  </Card.Text>
                 </Card.Body>
               </Card>
             </Col>

@@ -25,8 +25,7 @@ export default function Locations() {
               name: place.name,
               climate: place.climate,
               terrain: place.terrain,
-              surface_water: place.surface_water,
-              url: place.url,
+              surface_water: place.surface_water
             }))
           );
         })
@@ -45,8 +44,6 @@ export default function Locations() {
           {location.map((place) => (
             <Col md="4" className="mb-3">
               <Card key={place.id}>
-                {/* TODO fix cors issues in React */}
-                <img variant="top" src={place.url} alt="movie" />
                   <Card.Header as="h3" className="bg-info text-center">{place.name}</Card.Header>
                 <Card.Body>
                   <Card.Text>Climate: {place.climate}</Card.Text>

@@ -30,10 +30,6 @@ export default function Nav() {
           <Link className="text-info" to="/vehicles">
             Vehicles
           </Link>
-          <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-info">Search</Button>
-          </Form>
         </Navbar>
       </Container>
     </>

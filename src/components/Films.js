@@ -16,18 +16,18 @@ export default function Films() {
     () =>
       // Using axios to getch from api
       axios
-        .get("https://ghibliapi.herokuapp.com/films")
+        .get("https://ghibliapi.herokuapp.com/films",
+          {headers: { "Access-Control-Allow-Origin": "*" }})
         .then((response) => {
           let { data } = response;
-          console.log(data);
+          console.log(response);
           setFilms(
             data.map((film) => ({
               title: film.title,
               original_title: film.original_title,
               description: film.description,
-              url: film.url,
               release: film.release_date,
-              director: film.director,
+              director: film.director
             }))
           );
         })
@@ -47,8 +47,6 @@ export default function Films() {
           {films.map((film) => (
             <Col md="4" className="mb-3">
               <Card key={film.id}>
-                {/* TODO fix cors issues in React */}
-                <img variant="top" src={film.url} alt="movie poster" />
                 <Card.Header as="h3" className="bg-info text-center">
                   {film.title} - {film.release}
                 </Card.Header>

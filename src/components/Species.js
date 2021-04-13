@@ -25,9 +25,7 @@ export default function Species() {
               name: specie.name,
               classification: specie.classification,
               eyeColor: specie.eye_colors,
-              hairColor: specie.hair_colors,
-              people: specie.people,
-              films: specie.films,
+              hairColor: specie.hair_colors
             }))
           );
         })
@@ -53,8 +51,6 @@ export default function Species() {
                   <Card.Text>Classification: {specie.classification}</Card.Text>
                   <Card.Text>Hair colors: {specie.hairColor}</Card.Text>
                   <Card.Text>Eye colors: {specie.eyeColor}</Card.Text>
-                  <Card.Text>People: {specie.people}</Card.Text>
-                  <Card.Text>Films: {specie.films}</Card.Text>
                 </Card.Body>
               </Card>
             </Col>

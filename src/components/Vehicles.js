@@ -25,8 +25,7 @@ export default function Vehicles() {
             name: vehicle.name,
             class: vehicle.vehicle_class,
             length: vehicle.length,
-            pilot: vehicle.pilot,
-            description: vehicle.description,
+            description: vehicle.description
           }))
         );
       })
@@ -47,7 +46,6 @@ export default function Vehicles() {
                 <Card.Header as="h3" className="bg-info text-center">{vehicle.name}</Card.Header>
                 <Card.Text>Class: {vehicle.class}</Card.Text>
                 <Card.Text>Length: {vehicle.length}</Card.Text>
-                <Card.Text>Pilot: {vehicle.pilot}</Card.Text>
                 <Card.Text>Description: {vehicle.description}</Card.Text>
               </Card>
             </Col>
