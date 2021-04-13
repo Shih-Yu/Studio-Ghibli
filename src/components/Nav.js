@@ -2,9 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import FormControl from "react-bootstrap/FormControl";
-import Button from "react-bootstrap/Button";
+
 
 export default function Nav() {
   return (
@@ -12,22 +10,22 @@ export default function Nav() {
       <Container fluid>
         <Navbar className="text-center justify-content-between pr-5 fs-4">
           <Navbar.Brand className="fs-1">株式会社スタジオジブリ</Navbar.Brand>
-          <Link className="text-info" to="/">
+          <Link className="text-info mr-3" to="/">
             Home
           </Link>
-          <Link className="text-info" to="/films">
+          <Link className="text-info mr-3" to="/films">
             Films
           </Link>
-          <Link className="text-info" to="/locations">
+          <Link className="text-info mr-3" to="/locations">
             Locations
           </Link>
-          <Link className="text-info" to="/people">
+          <Link className="text-info mr-3" to="/people">
             People
           </Link>
-          <Link className="text-info" to="/species">
+          <Link className="text-info mr-3" to="/species">
             Species
           </Link>
-          <Link className="text-info" to="/vehicles">
+          <Link className="text-info mr-3" to="/vehicles">
             Vehicles
           </Link>
         </Navbar>
