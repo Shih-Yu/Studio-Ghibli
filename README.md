@@ -9,3 +9,8 @@ To see this project in action:
   - cd in to the directory
   - Run npm install to get the dependencies for the project
   - Run npm start 
+
+# Credit
+
+- [Janaipokos](https://github.com/janaipakos) for the amazing API
+- Image from [Screen Rant](https://screenrant.com/)
