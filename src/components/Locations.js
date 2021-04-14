@@ -36,16 +36,16 @@ export default function Locations() {
   // Rendering locations component
   return (
     <>
-      <h1 className="m-5">Locations</h1>
+      <h1 className="m-5">Locations from Studio Ghibli</h1>
       {/* Using Container/Row/Col/Cards to style the page */}
       <Container fluid>
         <Row>
           {/* Mapping through the data and get each property in setState */}
           {location.map((place) => (
             <Col md="4" className="mb-3">
-              <Card key={place.id}>
-                  <Card.Header as="h3" className="bg-info text-center">{place.name}</Card.Header>
-                <Card.Body className="bg-secondary">
+              <Card key={place.id} style={{borderColor: "#000", backgroundColor: "#3cadef"}}>
+                  <Card.Header as="h3" className="text-center">{place.name}</Card.Header>
+                <Card.Body className="text-light">
                   <Card.Text>Climate: {place.climate}</Card.Text>
                   <Card.Text>Terrain: {place.terrain}</Card.Text>
                   <Card.Text>Surface Water: {place.surface_water}</Card.Text>

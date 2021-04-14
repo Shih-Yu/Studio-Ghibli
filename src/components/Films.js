@@ -29,6 +29,7 @@ export default function Films() {
               release: film.release_date,
               director: film.director
             }))
+
           );
         })
         // catching errors and showing it
@@ -39,21 +40,21 @@ export default function Films() {
   // Rendering film component
   return (
     <>
-      <h1 className="m-5">Welcome to the film page</h1>
+      <h1 className="m-5">Films of Studio Ghibli</h1>
       {/* Using Container/Row/Col/Cards to style the page */}
       <Container fluid>
         <Row>
           {/* Mapping through the data and get each property in setState */}
           {films.map((film) => (
             <Col md="4" className="mb-3">
-              <Card key={film.id}>
-                <Card.Header as="h3" className="bg-info text-center">
+              <Card key={film.id} style={{borderColor: "#000", backgroundColor: "#3cadef"}}>
+                <Card.Header as="h3" className="text-center">
                   {film.title} - {film.release}
                 </Card.Header>
-                <Card.Body className="bg-secondary">
+                <Card.Body>
                   <Card.Text as="h3">{film.original_title}</Card.Text>
                   <Card.Text>{film.director}</Card.Text>
-                  <Card.Text className="card-text text-dark">{film.description}</Card.Text>
+                  <Card.Text className="card-text text-light">{film.description}</Card.Text>
                 </Card.Body>
               </Card>
             </Col>

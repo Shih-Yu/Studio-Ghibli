@@ -35,16 +35,16 @@ export default function Vehicles() {
   // Rendering vehicle component
   return (
     <>
-      <h1 className="m-5">Vehicles</h1>
+      <h1 className="m-5">Vehicles of Studio Ghibli</h1>
       {/* Using Container/Row/Col/Cards to style the page */}
       <Container fluid>
         <Row>
           {/* Mapping through the data and get each property in setState */}
           {vehicles.map((vehicle) => (
             <Col md="4" className="mb-3">
-              <Card key={vehicle.id}>
-                <Card.Header as="h3" className="bg-info text-center">{vehicle.name}</Card.Header>
-                <Card.Body className="bg-secondary">
+              <Card key={vehicle.id} style={{borderColor: "#000", backgroundColor: "#3cadef"}}>
+                <Card.Header as="h3" className="text-center">{vehicle.name}</Card.Header>
+                <Card.Body className="text-light">
                 <Card.Text>Class: {vehicle.class}</Card.Text>
                 <Card.Text>Length: {vehicle.length}</Card.Text>
                   <Card.Text>Description: { vehicle.description }</Card.Text>

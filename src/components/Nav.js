@@ -10,22 +10,22 @@ export default function Nav() {
       <Container fluid>
         <Navbar className="text-center justify-content-between pr-5 fs-4">
           <Navbar.Brand className="fs-1">株式会社スタジオジブリ</Navbar.Brand>
-          <Link className="text-info mr-3" to="/">
+          <Link className="text-dark mr-3" to="/">
             Home
           </Link>
-          <Link className="text-info mr-3" to="/films">
+          <Link className="text-dark mr-3" to="/films">
             Films
           </Link>
-          <Link className="text-info mr-3" to="/locations">
+          <Link className="text-dark mr-3" to="/locations">
             Locations
           </Link>
-          <Link className="text-info mr-3" to="/people">
+          <Link className="text-dark mr-3" to="/people">
             People
           </Link>
-          <Link className="text-info mr-3" to="/species">
+          <Link className="text-dark mr-3" to="/species">
             Species
           </Link>
-          <Link className="text-info mr-3" to="/vehicles">
+          <Link className="text-dark mr-3" to="/vehicles">
             Vehicles
           </Link>
         </Navbar>

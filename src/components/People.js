@@ -45,11 +45,11 @@ export default function People() {
           {/* Mapping through the data and get each property in setState */}
           {people.map((person) => (
             <Col md="4" className="mb-3">
-              <Card key={person.id}>
-                <Card.Header as="h3" className="bg-info text-center">
+              <Card key={person.id} style={{borderColor: "#000", backgroundColor: "#3cadef"}}>
+                <Card.Header as="h3" className="text-center" style={{backgroundColor: "#3cadef"}}>
                   {person.name}
                 </Card.Header>
-                <Card.Body className="bg-secondary">
+                <Card.Body className="text-light">
                   <Card.Text>Age: {person.age}</Card.Text>
                   <Card.Text>Gender: {person.gender}</Card.Text>
                   <Card.Text>Eye Color: {person.eyeColor}</Card.Text>

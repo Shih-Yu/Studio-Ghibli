@@ -36,18 +36,18 @@ export default function Species() {
   // Rendering species component
   return (
     <>
-      <h1 className="m-5">Species</h1>
+      <h1 className="m-5">Species of Studio Ghibli</h1>
       <Container fluid>
         <Row>
           {/* Using Container/Row/Col/Cards to style the page */}
           {/* Mapping through the data and get each property in setState */}
           {species.map((specie) => (
             <Col md="4" className="mb-3">
-              <Card>
-                <Card.Header as="h3" className="bg-info text-center">
+              <Card style={{borderColor: "#000", backgroundColor: "#3cadef"}}>
+                <Card.Header as="h3" className="text-center">
                   {specie.name}
                 </Card.Header>
-                <Card.Body className="bg-secondary">
+                <Card.Body className="text-light">
                   <Card.Text>Classification: {specie.classification}</Card.Text>
                   <Card.Text>Hair colors: {specie.hairColor}</Card.Text>
                   <Card.Text>Eye colors: {specie.eyeColor}</Card.Text>
