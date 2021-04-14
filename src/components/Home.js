@@ -14,7 +14,7 @@ export default function Home() {
         <h1>Welcome To Studio Ghibli Info</h1>
         <h1>株式会社スタジオジブリ</h1>
       </Jumbotron>
-      <img src={ logo }/>
+      <img src={ logo } alt="cartoon character"/>
     </>
   );
 }
