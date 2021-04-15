@@ -18,10 +18,10 @@ export default function People() {
       axios
         .get("https://ghibliapi.herokuapp.com/people")
         .then((response) => {
-          console.log(response);
           let { data } = response;
           setPeople(
             data.map((person) => ({
+              id: person.id,
               name: person.name,
               age: person.age,
               gender: person.gender,
@@ -43,8 +43,8 @@ export default function People() {
         <Row>
           {/* Mapping through the data and get each property in setState */}
           {people.map((person) => (
-            <Col md="4" className="mb-3">
-              <Card key={person.id} style={{borderColor: "#000", backgroundColor: "#3cadef"}}>
+            <Col key={person.id} md="4" className="mb-3">
+              <Card style={{borderColor: "#000", backgroundColor: "#3cadef"}}>
                 <Card.Header as="h3" className="text-center" style={{backgroundColor: "#3cadef"}}>
                   {person.name}
                 </Card.Header>

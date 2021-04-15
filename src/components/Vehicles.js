@@ -18,7 +18,6 @@ export default function Vehicles() {
       .get("https://ghibliapi.herokuapp.com/vehicles")
       .then((response) => {
         let { data } = response;
-        console.log(data)
         setVehicles(
           data.map((vehicle) => ({
             id: vehicle.id,
@@ -41,8 +40,8 @@ export default function Vehicles() {
         <Row>
           {/* Mapping through the data and get each property in setState */}
           {vehicles.map((vehicle) => (
-            <Col md="4" className="mb-3">
-              <Card key={vehicle.id} style={{borderColor: "#000", backgroundColor: "#3cadef"}}>
+            <Col key={vehicle.id} md="4" className="mb-3">
+              <Card style={{borderColor: "#000", backgroundColor: "#3cadef"}}>
                 <Card.Header as="h3" className="text-center">{vehicle.name}</Card.Header>
                 <Card.Body className="text-light">
                 <Card.Text>Class: {vehicle.class}</Card.Text>

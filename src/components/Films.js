@@ -20,9 +20,9 @@ export default function Films() {
           {headers: { "Access-Control-Allow-Origin": "*" }})
         .then((response) => {
           let { data } = response;
-          console.log(response);
           setFilms(
             data.map((film) => ({
+              id: film.id,
               title: film.title,
               original_title: film.original_title,
               description: film.description,
@@ -46,8 +46,8 @@ export default function Films() {
         <Row>
           {/* Mapping through the data and get each property in setState */}
           {films.map((film) => (
-            <Col md="4" className="mb-3">
-              <Card key={film.id} style={{borderColor: "#000", backgroundColor: "#3cadef"}}>
+            <Col key={film.id} md="4" className="mb-3">
+              <Card style={{borderColor: "#000", backgroundColor: "#3cadef"}}>
                 <Card.Header as="h3" className="text-center">
                   {film.title} - {film.release}
                 </Card.Header>

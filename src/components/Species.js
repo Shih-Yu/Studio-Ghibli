@@ -18,10 +18,10 @@ export default function Species() {
       axios
         .get("https://ghibliapi.herokuapp.com/species")
         .then((response) => {
-          console.log(response);
           let { data } = response;
           setSpecies(
             data.map((specie) => ({
+              id: specie.id,
               name: specie.name,
               classification: specie.classification,
               eyeColor: specie.eye_colors,
@@ -42,7 +42,7 @@ export default function Species() {
           {/* Using Container/Row/Col/Cards to style the page */}
           {/* Mapping through the data and get each property in setState */}
           {species.map((specie) => (
-            <Col md="4" className="mb-3">
+            <Col key={ specie.id } md="4" className="mb-3">
               <Card style={{borderColor: "#000", backgroundColor: "#3cadef"}}>
                 <Card.Header as="h3" className="text-center">
                   {specie.name}

@@ -19,13 +19,13 @@ export default function Locations() {
         .get("https://ghibliapi.herokuapp.com/locations")
         .then((response) => {
           let { data } = response;
-          console.log(data);
           setLocation(
             data.map((place) => ({
+              id: place.id,
               name: place.name,
               climate: place.climate,
               terrain: place.terrain,
-              surface_water: place.surface_water
+              surface_water: place.surface_water,
             }))
           );
         })
@@ -42,9 +42,11 @@ export default function Locations() {
         <Row>
           {/* Mapping through the data and get each property in setState */}
           {location.map((place) => (
-            <Col md="4" className="mb-3">
-              <Card key={place.id} style={{borderColor: "#000", backgroundColor: "#3cadef"}}>
-                  <Card.Header as="h3" className="text-center">{place.name}</Card.Header>
+            <Col key={place.id} md="4" className="mb-3">
+              <Card style={{ borderColor: "#000", backgroundColor: "#3cadef" }}>
+                <Card.Header as="h3" className="text-center">
+                  {place.name}
+                </Card.Header>
                 <Card.Body className="text-light">
                   <Card.Text>Climate: {place.climate}</Card.Text>
                   <Card.Text>Terrain: {place.terrain}</Card.Text>
