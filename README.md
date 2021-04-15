@@ -5,6 +5,10 @@ This is project to get a better understand of React's useState and UseEffect Hoo
 # Instructions
 
 To see this project in action:
+
+[Studio Ghibli Project](https://goofy-knuth-5b7288.netlify.app)
+
+Or to make it your own:
   - Clone/fork this repo
   - cd in to the directory
   - Run npm install to get the dependencies for the project
